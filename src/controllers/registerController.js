@@ -10,7 +10,7 @@ class RegisterController {
             await registerServices.registerService(body.name, body.email, body.password);
             res.status(201).json({message: "Created", user:{name: body.name, email: body.email, password: body.password}})
         } catch (error) {
-            next();
+            next(error);
         }
         
     }
